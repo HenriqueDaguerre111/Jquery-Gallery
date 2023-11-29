@@ -5,25 +5,25 @@ $(document).ready(function() {
     })
 
 
-    $('#botao-cancelar').click(function(){
+    $('#btn-cancel').click(function(){
         $('form').slideUp();
     })
 
 
     $('form').on('submit', function(e){
         e.preventDefault()
-        const enderecoDaNovaImagem = $('#endereco-imagem-nova').val()
-        const novoItem = $('<li style="display:none;"></li>')
-console.log(enderecoDaNovaImagem)
-        $(`<img src="${enderecoDaNovaImagem}"/>`).appendTo(novoItem)
-        $(`<div class='overlay-imagem-link'>
-        <a href='${enderecoDaNovaImagem}' target='_blank' title='Ver Imagem em Taqmanho Real'>Ver imagem em tamanho real</a>
-        </div>`).appendTo(novoItem)
+        const newImageAdress = $('#new-image-adress').val()
+        const NewItem = $('<li style="display:none;"></li>')
+console.log(newImageAdress)
+        $(`<img src="${newImageAdress}"/>`).appendTo(NewItem)
+        $(`<div class='overlay-image-link'>
+        <a href='${newImageAdress}' target='_blank' title='Open'>Open</a>
+        </div>`).appendTo(NewItem)
 
-        $(novoItem).appendTo('ul')
-        $(novoItem).fadeIn(1000)
+        $(NewItem).appendTo('ul')
+        $(NewItem).fadeIn(1000)
 
-        $('#endereco-imagem-nova').val('')
+        $('#new-image-adress').val('')
 
     })
 
